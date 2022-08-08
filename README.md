@@ -1,25 +1,26 @@
 
 
- I envesioned appaching the second task in the following ways:
+ ## I envisioned approaching the task in the following ways:
 
- - Using polymorphism (poly mean *many* and morphism  means *form*.). So it means the ability of an object to take in in many different forms.
+ - ### polymorphism
   
-   - That means that we will have a method by the name analyser which will be implemented differently depending on the type of comments class we have.
-     - I noticed that this method is the same in all type of comments classes(Comments,Spam, questions, etc). The aim here is to analyse comments right so polymorphism that take form in this case. Difinatly my first approach to try making the program more maintainable and  accessible in the future.
+   -   Using polymorphism (poly means *many* and morphism means *form*.). So it means the ability of an object to take many different forms.
+  
+   - That means that we will have a method by the name analyze which will be implemented differently depending on the type of comments class we have.
+     - I noticed that this method is the same in all types of comments classes( <strong>Comments</strong>, <strong>Spam</strong>,  <strong>Questions</strong>). The aim here is to analyze comments right so polymorphism takes form in this case. My first approach is to try to make the program more maintainable and accessible in the future.
      - ok let's try out polymorphism
-     -  A main class talks with commentAnalyzer class, which is the base for other classes
-     -  in commentAnalyzer class we have an abstract class call  analyse
-     -  The analyse method is implemented in child classes(Comments, Spam, Qustions)
-     -  I belive this technique will take away the agry many if statement ub the future
-     -  any other type of comment will just call the method analyse on its implementation
+     - The main/ App class talks with CommentAnalyzer class, which is the base for other classes
+     -  in commentAnalyzer class, we have an abstract class called analyze
+     -  The analyze method is implemented in child classes(Comments, Spam, Questions)
+     -  I believe this technique will take away the burden of if statement in the future
+     -  any other type of comment will just call the method analyze on its implementation
      - See the UML digraph for more information about polymorphism implementation.
         
-  - Programming to an interface
-     - This can be the easiest way too. We can have each type of comment being a class(comments, Spam, Questions). CommentAnalyser will be the interface for all types of class comments. So that means each class comment will implement the interface according to its behavior method.
-     - But I feel like this is still not object orriented enough beacuse we will need to have many different methods and implenations for each class comment.
-     - Keeping in mind that the goal  here is to analyse comments so having just one obstract method with the name analyser would perform better.This makes me favor polymorphisms over programing to an interface.
-  
-  
-
--Another idea in mind is to use the command pattern.
-   
+- ## Programming to an interface
+     - This can be the easiest way too. We can have each type of comment being a class( comments, Spam, Questions). CommentAnalyser will be the interface for all types of class comments. So that means each class comment will implement the interface according to its behavior method.
+     - But I feel like this is still not object-oriented enough because we will need to have many different methods and implementations for each class comment.
+     - Keeping in mind that the goal here is to analyze comments so having just one abstract method with the name analyze would perform better. This makes me favor polymorphisms over programming to an interface.
+- ## Command pattern
+  -  Seems like  polymorphism worked out good but I still see some redundant code here
+  -  It is worth considering using the Command pattern
+  -  I will give it a shot.
