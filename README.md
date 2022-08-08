@@ -1,6 +1,9 @@
 
 
- ## I envisioned approaching the task in the following ways:
+Please *note* that there are two branches in this repo, *main* and *master*. <strong>Master *has my lates code*</strong>
+
+# My Approach
+ ### So I envisioned approaching the task in the following ways:
 
  - ### polymorphism
   
