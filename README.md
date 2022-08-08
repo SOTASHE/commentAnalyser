@@ -1,6 +1,6 @@
 
 
-Please *note* that there are two branches in this repo, *main* and *master*. <strong>Master *has my lates code*</strong>
+Please *note* that there are two branches in this repo, *main* and *master*. <strong>Master *has my latest version code*</strong>
 
 # My Approach
  ### So I envisioned approaching the task in the following ways:
