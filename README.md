@@ -1,8 +1,11 @@
 
 
-Please *note* that there are three branches in this repo, *main*, *task3-in-dev-mode* and *master*. <strong>Master *has my latest version code*</strong> so all the finally code will be in the master branch
+Please **note** that there are three branches in this repo, *main*, *task3-in-dev-mode* and *master*. <strong>Master *has my latest version code*</strong> so all the finally code will be in the master branch
+
+---
 
 # My Approach
+---
  ### So I envisioned approaching the task in the following ways:
 
  - ### polymorphism
