@@ -110,7 +110,7 @@ Please **note** that there are three branches in this repo, *main*, *task3-in-de
      - 
       Because threads run at the same time as other parts of the program, sometimes  there is no way to know in which order the code will run. 
       
-      - When the threads and main program are reading and writing the same variables, the values are unpredictable. Which is not the case in my code.  To avoid concurrency problems, I have decided to share few attributes between threads and the other parts of the code. I would have used the <strong>Master *isAlive()*</strong>   method of the thread to check whether the thread has finished running before using any attributes that the thread can change.
+      - When the threads and main program are reading and writing the same variables, the values are unpredictable. Which is not the case in my code.  To avoid concurrency problems, I have decided to share few attributes between threads and the other parts of the code. I would have used the <strong> *isAlive()*</strong>   method of the thread to check whether the thread has finished running before using any attributes that the thread can change.
 
 
            <br> <br>
