@@ -13,6 +13,14 @@ public class App {
             Thread t1 = new Thread(fileRead);
             t1.start(); // start the thread
 
+            //wait for the thread to finish
+            t1.join();
+
+            System.out.println("done");
+            // print the results of the analysis of the file to the totalResults
+        
+
+
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

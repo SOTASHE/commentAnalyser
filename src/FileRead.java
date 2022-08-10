@@ -39,6 +39,7 @@ class FileRead extends Thread {
                         addReportResults(analyzerComments.analyze(), fileResults);
                         addReportResults(analyzerqusetions.analyze(), fileResults);
                         addReportResults(analyzerspam.analyze(), fileResults);
+                        
 
                     }
                 }
