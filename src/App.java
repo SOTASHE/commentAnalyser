@@ -1,51 +1,30 @@
-import java.io.File;
-import java.util.Map;
+
 
 public class App {
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
+        try {
+            FileRead fileRead = new FileRead(null, null);
 
-        File file = new File("docs"); // create a new file object with the path to the directory we want to analyzed
-        File[] files = file.listFiles(); // create an array of files from the directory we want to analyze
-        for (File f : files) { // loop through the files in the directory
-            if (f.getName().endsWith(".txt")) { // if the file is a text file (.txt) we want to analyze we create a new CommentAnalyzer object with the file we want to analyze
-                AnalyzeComments(new Comments(f));
-                 AnalyzeQuestions(new Questions(f));
-                AnalyzeSpam(new Spam(f));
-                Comments analyzerComments;
-                Questions analyzerqusetions;
-                Spam analyzerspam;
-                  
+            //initialize the thread  class variables
+            Thread t1 = new Thread(fileRead);
+            t1.start(); // start the thread
 
-                analyzerComments = new Comments(f);
-                analyzerqusetions = new Questions(f);
-                analyzerspam = new Spam(f);
-                //print the results of the analysis
-                for (Map.Entry<String, Integer> entry : analyzerComments.analyze().entrySet()) {
-                    System.out.println(entry.getKey() + ": " + entry.getValue());
-                }
-                for (Map.Entry<String, Integer> entry : analyzerqusetions.analyze().entrySet()) {
-                    System.out.println(entry.getKey() + ": " + entry.getValue());
-                }
-                for (Map.Entry<String, Integer> entry : analyzerspam.analyze().entrySet()) {
-                    System.out.println(entry.getKey() + ": " + entry.getValue());
-                }
-            }
+            //wait for the thread to finish
+            t1.join();
+
+            System.out.println("done");
+            // print the results of the analysis of the file to the totalResults
+        
+
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
-    }
-    
-    private static void AnalyzeComments(Comments comments) {
-    }
-
-    private static void AnalyzeQuestions(Questions questions) {
-    }
-    
-
-    private static void AnalyzeSpam(Spam spam) {
-    }
-
-    public App(  CommentAnalyzer commentAnalyzer){
-        commentAnalyzer.analyze();
-
 
     }
+   
 }

@@ -18,7 +18,7 @@
 #     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
 # This output file may be truncated or incomplete.
 #
-#  Out of Memory Error (os_windows.cpp:3541), pid=4716, tid=6704
+#  Out of Memory Error (os_windows.cpp:3541), pid=1660, tid=11856
 #
 # JRE version:  (17.0.4+8) (build )
 # Java VM: OpenJDK 64-Bit Server VM (17.0.4+8, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
@@ -30,13 +30,13 @@
 Command Line: -XX:+ShowCodeDetailsInExceptionMessages App
 
 Host: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  , 8 cores, 5G,  Windows 10 , 64 bit Build 21996 (10.0.21996.1)
-Time: Mon Aug  8 21:48:44 2022 South Africa Standard Time elapsed time: 0.021237 seconds (0d 0h 0m 0s)
+Time: Wed Aug 10 06:10:31 2022 South Africa Standard Time elapsed time: 0.098968 seconds (0d 0h 0m 0s)
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x0000012edb90d730):  JavaThread "Unknown thread" [_thread_in_vm, id=6704, stack(0x0000002109c00000,0x0000002109d00000)]
+Current thread (0x0000012873de48f0):  JavaThread "Unknown thread" [_thread_in_vm, id=11856, stack(0x0000000ee0800000,0x0000000ee0900000)]
 
-Stack: [0x0000002109c00000,0x0000002109d00000]
+Stack: [0x0000000ee0800000,0x0000000ee0900000]
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x67733a]
 V  [jvm.dll+0x8323c4]
@@ -65,22 +65,22 @@ C  [ntdll.dll+0x485b]
 ---------------  P R O C E S S  ---------------
 
 Threads class SMR info:
-_java_thread_list=0x00007ffd0f3a4e98, length=0, elements={
+_java_thread_list=0x00007ff9fdcf4e98, length=0, elements={
 }
 
 Java Threads: ( => current thread )
 
 Other Threads:
-  0x0000012edb95afe0 GCTaskThread "GC Thread#0" [stack: 0x0000002109d00000,0x0000002109e00000] [id=13176]
-  0x0000012edb967ca0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000002109e00000,0x0000002109f00000] [id=2468]
-  0x0000012edb9685b0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002109f00000,0x000000210a000000] [id=13072]
+  0x0000012873e2ba70 GCTaskThread "GC Thread#0" [stack: 0x0000000ee0900000,0x0000000ee0a00000] [id=17308]
+  0x0000012873e38fd0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000000ee0a00000,0x0000000ee0b00000] [id=1272]
+  0x0000012873e399e0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000000ee0b00000,0x0000000ee0c00000] [id=5016]
 
-[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd0eb7beb7]
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9fd4cbeb7]
 
 VM state: not at safepoint (not fully initialized)
 
 VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
-[0x0000012edb908030] Heap_lock - owner thread: 0x0000012edb90d730
+[0x0000012873de0060] Heap_lock - owner thread: 0x0000012873de48f0
 
 Heap address: 0x00000000a0c00000, size: 1524 MB, Compressed Oops mode: 32-bit
 
@@ -94,7 +94,7 @@ Heap:
  garbage-first heap   total 0K, used 0K [0x00000000a0c00000, 0x0000000100000000)
   region size 1024K, 0 young (0K), 0 survivors (0K)
 
-[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd0ef606b9]
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9fd8b06b9]
 
 GC Heap History (0 events):
 No events
@@ -115,42 +115,42 @@ VM Operations (0 events):
 No events
 
 Events (1 events):
-Event: 0.011 Loaded shared library C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\java.dll
+Event: 0.058 Loaded shared library C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\java.dll
 
 
 Dynamic libraries:
-0x00007ff6a2b40000 - 0x00007ff6a2b4e000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\java.exe
-0x00007ffd60aa0000 - 0x00007ffd60ca7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
-0x00007ffd5fae0000 - 0x00007ffd5fb9d000 	C:\WINDOWS\System32\KERNEL32.DLL
-0x00007ffd5e5f0000 - 0x00007ffd5e962000 	C:\WINDOWS\System32\KERNELBASE.dll
-0x00007ffd5e3b0000 - 0x00007ffd5e4c1000 	C:\WINDOWS\System32\ucrtbase.dll
-0x00007ffd50760000 - 0x00007ffd50778000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\jli.dll
-0x00007ffd4e2d0000 - 0x00007ffd4e2e9000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\VCRUNTIME140.dll
-0x00007ffd5eb20000 - 0x00007ffd5eccc000 	C:\WINDOWS\System32\USER32.dll
-0x00007ffd5e130000 - 0x00007ffd5e156000 	C:\WINDOWS\System32\win32u.dll
-0x00007ffd5f3f0000 - 0x00007ffd5f419000 	C:\WINDOWS\System32\GDI32.dll
-0x00007ffd5e4d0000 - 0x00007ffd5e5e2000 	C:\WINDOWS\System32\gdi32full.dll
-0x00007ffd5e310000 - 0x00007ffd5e3ad000 	C:\WINDOWS\System32\msvcp_win.dll
-0x00007ffd4a9e0000 - 0x00007ffd4ac85000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.21996.1_none_7d6b053978bcd706\COMCTL32.dll
-0x00007ffd5f670000 - 0x00007ffd5f713000 	C:\WINDOWS\System32\msvcrt.dll
-0x00007ffd5ed80000 - 0x00007ffd5edb1000 	C:\WINDOWS\System32\IMM32.DLL
-0x00007ffd59f30000 - 0x00007ffd59f3c000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\vcruntime140_1.dll
-0x00007ffd48860000 - 0x00007ffd488f1000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\msvcp140.dll
-0x00007ffd0e890000 - 0x00007ffd0f4d6000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\server\jvm.dll
-0x00007ffd5ecd0000 - 0x00007ffd5ed7c000 	C:\WINDOWS\System32\ADVAPI32.dll
-0x00007ffd60940000 - 0x00007ffd609dd000 	C:\WINDOWS\System32\sechost.dll
-0x00007ffd5f880000 - 0x00007ffd5f9a1000 	C:\WINDOWS\System32\RPCRT4.dll
-0x00007ffd5e990000 - 0x00007ffd5e998000 	C:\WINDOWS\System32\PSAPI.DLL
-0x00007ffd3e740000 - 0x00007ffd3e749000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
-0x00007ffd608d0000 - 0x00007ffd6093f000 	C:\WINDOWS\System32\WS2_32.dll
-0x00007ffd55450000 - 0x00007ffd55483000 	C:\WINDOWS\SYSTEM32\WINMM.dll
-0x00007ffd55b70000 - 0x00007ffd55b7a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
-0x00007ffd5d0f0000 - 0x00007ffd5d107000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
-0x00007ffd59220000 - 0x00007ffd5922a000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\jimage.dll
-0x00007ffd5b8a0000 - 0x00007ffd5bac1000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
-0x00007ffd4a700000 - 0x00007ffd4a731000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
-0x00007ffd5e290000 - 0x00007ffd5e310000 	C:\WINDOWS\System32\bcryptPrimitives.dll
-0x00007ffd4ae90000 - 0x00007ffd4aeb5000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\java.dll
+0x00007ff7ad380000 - 0x00007ff7ad38e000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\java.exe
+0x00007ffa60860000 - 0x00007ffa60a67000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa5f100000 - 0x00007ffa5f1bd000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffa5de40000 - 0x00007ffa5e1b2000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffa5e4f0000 - 0x00007ffa5e601000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa334e0000 - 0x00007ffa334f9000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\VCRUNTIME140.dll
+0x00007ffa33330000 - 0x00007ffa33348000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\jli.dll
+0x00007ffa5ed40000 - 0x00007ffa5eeec000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffa5e2e0000 - 0x00007ffa5e306000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffa5f790000 - 0x00007ffa5f7b9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffa4cca0000 - 0x00007ffa4cf45000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.21996.1_none_7d6b053978bcd706\COMCTL32.dll
+0x00007ffa5e1c0000 - 0x00007ffa5e2d2000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffa5e610000 - 0x00007ffa5e6ad000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffa5ec90000 - 0x00007ffa5ed33000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffa5e9d0000 - 0x00007ffa5ea01000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffa33570000 - 0x00007ffa3357c000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\vcruntime140_1.dll
+0x00007ffa10130000 - 0x00007ffa101c1000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\msvcp140.dll
+0x00007ff9fd1e0000 - 0x00007ff9fde26000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\server\jvm.dll
+0x00007ffa5e920000 - 0x00007ffa5e9cc000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffa5f7c0000 - 0x00007ffa5f85d000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffa5efd0000 - 0x00007ffa5f0f1000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffa5ec80000 - 0x00007ffa5ec88000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffa54bc0000 - 0x00007ffa54bf3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffa53a80000 - 0x00007ffa53a8a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffa48ec0000 - 0x00007ffa48ec9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffa60740000 - 0x00007ffa607af000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffa5ceb0000 - 0x00007ffa5cec7000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffa33370000 - 0x00007ffa3337a000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\jimage.dll
+0x00007ffa5b680000 - 0x00007ffa5b8a1000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffa49f90000 - 0x00007ffa49fc1000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffa5e6b0000 - 0x00007ffa5e730000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffa29400000 - 0x00007ffa29425000 	C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\java.dll
 
 dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
 symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.21996.1_none_7d6b053978bcd706;C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin\server
@@ -204,12 +204,12 @@ TEMP=C:\Users\Snaye\AppData\Local\Temp
 
 OS:
  Windows 10 , 64 bit Build 21996 (10.0.21996.1)
-OS uptime: 0 days 3:03 hours
+OS uptime: 0 days 10:32 hours
 
 CPU: total 8 (initial active 8) (8 cores per cpu, 2 threads per core) family 23 model 24 stepping 1 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt
 
-Memory: 4k page, system-wide physical 6091M (232M free)
-TotalPageFile size 11595M (AvailPageFile size 98M)
+Memory: 4k page, system-wide physical 6091M (114M free)
+TotalPageFile size 11103M (AvailPageFile size 58M)
 current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
 current process commit charge ("private bytes"): 60M, peak: 156M
 

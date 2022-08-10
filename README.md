@@ -1,8 +1,11 @@
 
 
-Please *note* that there are two branches in this repo, *main* and *master*. <strong>Master *has my latest version code*</strong>
+Please **note** that there are three branches in this repo, *main*, *task3-in-dev-mode* and *master*. <strong>Master *has my latest version code*</strong> so all the finally code will be in the master branch. But because this my final submission all branches will up to date. Can trace my commits on each branch. <br /> <br/>
+
+
 
 # My Approach
+
  ### So I envisioned approaching the task in the following ways:
 
  - ### polymorphism
@@ -74,7 +77,141 @@ Please *note* that there are two branches in this repo, *main* and *master*. <st
 
 
        ```
+
+
 - ## Command pattern
-  -  Seems like  polymorphism worked out good but I still see some redundant code here
-  -  It is worth considering using the Command pattern
-  -  I will give it a shot.
+  -   polymorphism worked out good but I still see some redundant. 
+  -  so using Command pattern is another idea I had in mind.
+  -  Given much time I would have loved to demonstrate Command pattern.
+
+
+<br> <br>
+
+
+
+
+
+- ## Using threads ( task3)
+
+
+
+     <br>
+
+  -
+      FileRead class extends thread
+     the code that reads the files is inside the run() method of the thread. Run() method is inherited and overridden by the FileRead class.
+       Whithin the the  main method of the App class an instance of the FileRead class is created and call its start() method to start the thread.
+       - **Note:** there is no other activities in the main method of the App class other than the start() method. I would have used the isAlive() or join() method to  Wait for this thread to die. before start doing any other operations.
+
+
+
+   - Concurrency Problems
+     - 
+      Because threads run at the same time as other parts of the program, sometimes  there is no way to know in which order the code will run. 
+      
+      - When the threads and main program are reading and writing the same variables, the values are unpredictable. Which is not the case in my code.  To avoid concurrency problems, I have decided to share few attributes between threads and the other parts of the code. I would have used the <strong>Master *isAlive()*</strong>   method of the thread to check whether the thread has finished running before using any attributes that the thread can change.
+
+
+           <br> <br>
+
+           ### Another solution I had in mind which I think would perform better
+           ---
+           process multiple files simultaneously by assigning number of threads on runtime. 
+        - Advantage to this:
+            
+          - Can assign N number of threads on runtime based on CPU utilization.
+          - Can process all the files in less time.
+  
+           <br>
+
+         ### Aproach:
+  
+
+        - Get the list of all files in Array.
+        -  Assign number of threads.
+         - Assign files equally to each thread.
+        - Assign remaining files to the last thread.
+         -  Run all the threads and wait to complete execution of all the threads
+          -  make sure that when  obtaining several locks, I acquire them in the same order across all threads in order to prevent deadlock
+          -  This is the glimpse to the bonus question check code snippet bellow:
+
+          <br>
+
+  ``` Java
+
+  Map<String, Integer> totalResults = new HashMap<>();
+		//Get the list of all files in Array.
+	File docPath = new File("docs");
+		final File[] commentFiles = docPath.listFiles((d, n) -> n.endsWith(".txt"));
+		// Assign number of threads.
+   		int numThreads =2;
+		//Assign files equally to each thread.
+		//Assign remaining files to the last thread.
+		Thread[] threads = new Thread[numThreads];
+		final int filesPerThread=commentFiles.length/numThreads;
+		final int remainingFiles = commentFiles.length%numThreads;
+    
+	//Run all the threads and wait to complete execution of all the threads.
+	for (int i = 0; i < numThreads; i++) {
+	final int thread = i;
+	threads[i] = new Thread() {
+		public void run() {
+			runThread(commentFiles, thread, filesPerThread, remainingFiles);
+			for (int j = 0; j < filesPerThread; j++) {
+				File file = commentFiles[thread * filesPerThread + j];
+				CommentAnalyzer analyzer = new CommentAnalyzer(file);
+				Map<String, Integer> resultsMap = analyzer.analyze();
+				totalResults.putAll(resultsMap);
+			}
+		}
+			};
+		try {
+			threads[i].start();
+			threads[i].join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+			}
+			}
+	
+	}
+
+
+	private static void runThread(File[] commentFiles, int thread, int filesPerThread, int remainingFiles) {
+			
+		try {
+			Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+            Thread.currentThread().setContextClassLoader(  Thread.currentThread().getContextClassLoader());
+
+			if (thread > 0) {
+                Thread.currentThread().start();
+            }
+            
+            long start = System.currentTimeMillis();
+
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+
+	private static void incOccurrence(Map<String, Integer> totalResults, String key) {
+		if (totalResults.containsKey(key)) {
+			totalResults.put(key, totalResults.get(key) + 1);
+		} else {
+			totalResults.put(key, 1);
+		}
+
+  ```
+
+
+  There are many solutions to this. I hope I am not over engineering with my wild thoughts.
+
+  By the way this is a tech check!
+  <br>
+  ### Happy coding!
+
+  <br>
+  
+  ## Author
+
+   [Snaye Sotashe](https://github.com/SOTASHE)
