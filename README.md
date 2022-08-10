@@ -102,10 +102,10 @@ Please **note** that there are three branches in this repo, *main*, *task3-in-de
       
     -  the code that reads the files is inside the run() method of the thread. Run() method is inherited and overridden by the FileRead class.
        Whithin the the  main method of the App class an instance of the FileRead class is created and call its start() method to start the thread.
-       - **Note:** there is no other activities in the main method of the App class other than the start() method. I would have used the isAlive() or join() method to  Wait for this thread to die. before start doing any other operations.
+       - **Note:** there is no other activities in the main method of the App class other than the start() method. I would have used the isAlive() or join() method to  Wait for this thread to die. before start doing any other operations. <br/>
 
 
-```
+```java
 class FileRead extends Thread {
         public FileRead(File file, Map<String, Integer> totalResults) 
         { 
