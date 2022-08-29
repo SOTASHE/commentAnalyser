@@ -281,10 +281,10 @@ class FileRead extends Thread {
   There are many solutions to this. I hope I am not over engineering with my wild thoughts.
 
   <br>
-  ### Happy coding!
+  ###  Happy coding!
 
   <br>
   
-  ## Author
+  ##  Author
 
    [Snaye Sotashe](https://github.com/SOTASHE)
