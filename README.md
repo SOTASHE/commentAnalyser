@@ -1,7 +1,5 @@
 
 
-Please **note** that there are three branches in this repo, *main*, *task3-in-dev-mode* and *master*. <strong>Master *has my latest version code*</strong> so all the finally code will be in the master branch. But because this my final submission  *task3-in-dev-mode* branch is now up to date with the master branch. Can trace my commits on each branch. <br /> <br/>
-
 
 
 # My Approach
@@ -282,7 +280,6 @@ class FileRead extends Thread {
 
   There are many solutions to this. I hope I am not over engineering with my wild thoughts.
 
-  By the way this is a tech check!
   <br>
   ### Happy coding!
 
